@@ -21,7 +21,7 @@ This is a full-stack MERN application that manages the basic information of empl
 Clone the project
 
 ```bash
-  git clone https://github.com/doananhtingithub40102/mern-app.git
+  git clone https://github.com/jbernis/wiz-mern.git
 ```
 
 Go to the project directory
@@ -34,11 +34,14 @@ Create an Atlas URI connection parameter in `server/.env` with your Atlas URI:
 ```
 ATLAS_URI="mongodb+srv://<username>:<password>@cluster0.6cgz2s1.mongodb.net/?retryWrites=true&w=majority"
 PORT=5000
+
+OR Local database:
+const uri ="mongodb://localhost:27017"
 ```
 
 Create an hostname on server enviroment variable in `client/.env` with your hostname on server:
 ```
-REACT_APP_YOUR_HOSTNAME="http://localhost:5000"
+REACT_APP_YOUR_HOSTNAME="http://localhost:4000"
 ```
 
 Install dependencies
