@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-srv
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: wiz.wsutils.xyz
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: frontend-srv
+                port:
+                  number: 3000
+          - path: /record/?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: backend-clusterip-srv
+                port:
+                  number: 4000
+          - path: /update/?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: backend-clusterip-srv
+                port:
+                  number: 4000
+          
+         
